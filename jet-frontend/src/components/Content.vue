@@ -7,7 +7,7 @@
     <section class="results">
       <RestaurantSkeleton  v-if="loading"/>
       <Restaurant :restaurant=restaurant v-else-if="restaurants.length > 0" v-for="restaurant in restaurants"/>
-      <div v-else="">No restaurants found</div>
+      <div v-else-if="loading === false">No restaurants found</div>
     </section>
   </section>
 </template>
@@ -18,7 +18,7 @@ import Restaurant from './Restaurant.vue';
 import RestaurantSkeleton from './RestaurantSkeleton.vue';
 
 let restaurants = ref([]);
-let loading = ref(false);
+let loading = ref(null);
 
 const findRestaurants = async (postcode) => {
   if (postcode) {
