@@ -47,6 +47,7 @@ node server.js
 To run the frontend.
 
 ```
+cd jet-frontend
 npm run dev
 ```
 
