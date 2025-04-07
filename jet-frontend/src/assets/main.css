@@ -1,0 +1,150 @@
+h1, h2, h3 {
+    font-family: JETSansDigital,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Arial,sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+body {
+    margin: 0;
+    background-color: #efedea;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c1dade;
+    height: 72px;
+}
+
+
+/* Content */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    gap: 20px;
+}
+
+
+/* Search */
+
+.search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    height: 54px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    padding-left: 20px;
+}
+  
+input:focus {
+    outline: none;
+}
+  
+input:hover {
+    background-color: #f0f0f0;
+}
+
+button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 44px;
+    background-color: #c1dade;
+    border: none;
+    border-radius: 12px;
+}
+
+button:hover {
+    background-color: #81b0b9;
+    cursor: pointer;
+}
+
+
+/* Results */
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box, .box-skeleton {
+    width: 900px;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.box {
+    display: flex;
+    height: fit-content;
+    max-width: calc(100vw - 40px);
+    background-color: #c1dade;
+    padding: 20px;
+    gap: 20px;
+}
+
+.box-skeleton {
+    height: 190px;
+    background-color: #dddddd;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+}
+
+.box-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-block: 15px;
+    white-space: normal;
+}
+
+.tag {
+    width: fit-content;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 1200px) {
+    .box-skeleton {
+        max-width: calc(100vw - 40px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .box {
+        flex-direction: column;
+    }
+}
