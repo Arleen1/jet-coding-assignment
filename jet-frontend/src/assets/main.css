@@ -8,13 +8,16 @@ h1 {
 }
 
 h2 {
-    font-family: JETSansDigital,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1rem;
 }
 
 body {
     margin: 0;
     background-color: #efedea;
 }
+
+
+/* Header */
 
 header {
     display: flex;
@@ -24,36 +27,9 @@ header {
     background-color: #c1dade;
     height: 72px;
 }
-  
-input {
-    height: 50px;
-    font-size: 2rem;
-    border: none;
-    border-radius: 12px;
-}
-  
-input:focus {
-    border: 2px #c1dade;
-    outline: none;
-}
 
-button {
-    background-color: #c1dade;
-    border: none;
-    border-radius: 12px;
-}
 
-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 12px;
-}
-
-.search {
-    display: flex;
-    justify-content: center;
-    max-width: 1000px;
-}
+/* Content */
 
 .content {
     display: flex;
@@ -63,19 +39,81 @@ img {
     gap: 20px;
 }
 
+
+/* Search */
+
+.search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    height: 54px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    padding-left: 20px;
+}
+  
+input:focus {
+    outline: none;
+}
+  
+input:hover {
+    background-color: #f0f0f0;
+}
+
+button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 44px;
+    background-color: #c1dade;
+    border: none;
+    border-radius: 12px;
+}
+
+button:hover {
+    background-color: #81b0b9;
+    cursor: pointer;
+}
+
+
+/* Results */
+
 .results {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+.box, .box-skeleton {
+    width: 900px;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
 .box {
     display: flex;
-    max-width: 1000px;
+    height: fit-content;
+    max-width: calc(100vw - 40px);
     background-color: #c1dade;
     padding: 20px;
-    border-radius: 12px;
     gap: 20px;
+}
+
+.box-skeleton {
+    height: 190px;
+    background-color: #dddddd;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
 }
 
 .box-text {
@@ -86,8 +124,9 @@ img {
 .tags {
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    margin-block: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-block: 15px;
     white-space: normal;
 }
 
@@ -95,5 +134,17 @@ img {
     width: fit-content;
     background-color: #fff;
     padding: 10px;
+    border-radius: 12px;
 }
 
+@media screen and (max-width: 1200px) {
+    .box-skeleton {
+        max-width: calc(100vw - 40px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .box {
+        flex-direction: column;
+    }
+}
